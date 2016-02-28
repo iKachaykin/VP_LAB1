@@ -14,6 +14,10 @@ namespace ConsoleApplication1
             Regex myReg = new Regex(emailRegularExpression);
             string directory = Console.ReadLine();
             string file = File.ReadAllText(@directory);
+             foreach (Match match in myReg.Matches(file))
+             {
+                Console.WriteLine(match);
+             }	
             
         }
     }
