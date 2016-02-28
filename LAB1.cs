@@ -29,7 +29,7 @@ namespace ConsoleApplication1
             {
                 Console.WriteLine("Не существует файла или директории с введённым Вами названием!!!");
             }
-            catch
+            catch (Exception)
             {
                 Console.WriteLine("Непредусмотренная ошибка!!!");
             }
