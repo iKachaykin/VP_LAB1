@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Text.RegularExpressions;
 
 namespace ConsoleApplication1
 {
@@ -12,13 +14,15 @@ namespace ConsoleApplication1
         {
             string emailRegularExpression = @"[a-zA-Z0-9]\S*@\w+\.\w*[a-zA-Z]";
             Regex myReg = new Regex(emailRegularExpression);
+            Console.WriteLine("Введите полный путь к указанному файлу: ");
             string directory = Console.ReadLine();
             string file = File.ReadAllText(@directory);
-             foreach (Match match in myReg.Matches(file))
-             {
-                Console.WriteLine(match);
-             }	
-            
+            Console.WriteLine("Все адреса электронных почт в указанном файле: ");
+            foreach (Match match in myReg.Matches(file))
+            {
+            	Console.WriteLine(match);
+            }	
+            Console.ReadKey();
         }
     }
 }
