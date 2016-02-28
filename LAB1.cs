@@ -12,6 +12,8 @@ namespace ConsoleApplication1
         {
             string emailRegularExpression = @"[a-zA-Z0-9]\S*@\w+\.\w*[a-zA-Z]";
             Regex myReg = new Regex(emailRegularExpression);
+            string directory = Console.ReadLine();
+            string file = File.ReadAllText(@directory);
             
         }
     }
